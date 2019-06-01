@@ -22,7 +22,7 @@
             outline: none;
         }
 
-        .con-wrap {
+        .con-wrap form {
             display: -moz-box;
             display: -webkit-box;
             display: box;
@@ -83,22 +83,27 @@
             -webkit-user-select: none;
             user-select: none;
         }
+        .logo{
+            background: transparent url(./SharedSpriteDesktop_2x_040919.png) no-repeat;
+            background-position: 0px -75px;
+            width: 100px;
+            height: 55px;
+            margin: 0 auto;
+        }
     </style>
 </head>
 
 <body>
     <div class="con-wrap">
-        <input id="index-cn" type="text" class="se-input adjust-input">
-        <div class="se-inner">
-            <button id="index-bn" class="se-bn" type="submit">百度一下</button>
-        </div>
+        <div class="logo"></div>
+        <form action="https://cn.bing.com/search">
+            <input id="index-cn" type="text" name="q" class="se-input adjust-input" placeholder="请输入搜索内容...">
+            <div class="se-inner">
+                <input type="hidden" name="ensearch" value="1" />
+                <input id="index-bn" type="submit" value="搜索一下" />
+            </div>
+        </form>
     </div>
-
-    <script>
-        document.getElementById('index-bn').onclick = function() {
-            window.location.href = `https://cn.bing.com/search?ensearch=1&q=${document.getElementById('index-cn').value}`
-        }
-    </script>
 </body>
 
 </html>
